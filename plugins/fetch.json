@@ -5,5 +5,11 @@
             "url": "https://github.com/petermetz/cordova-plugin-ibeacon.git",
             "subdir": "."
         }
+    },
+    "org.apache.cordova.console": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.console"
+        }
     }
 }
