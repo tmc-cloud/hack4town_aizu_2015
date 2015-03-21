@@ -20,7 +20,7 @@ function plotCenterPoint() {
 
   $(cp).prop("src", CENTER_IMG_PATH);
   $(cp).css("position", "absolute");
-  $(cp).css("top", "30%");
+  $(cp).css("top", ($(document).width() * 0.90) / 2);
   $(cp).css("left", "50%");
   $(cp).css("height", CENTER_POINT_HEIGHT + "px");
   $(cp).css("width", CENTER_POINT_WIDTH + "px");
