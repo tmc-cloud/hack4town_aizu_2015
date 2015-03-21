@@ -10,14 +10,60 @@
         <title>Hello World</title>
     </head>
     <body>
-        <div id = "label">
-            検索中...
-        </div>
-        <div id="background">
+        <div id = "search" onclick="hideDialog()">
+            <div id = "label">
+                検索中...
+            </div>
+            <div id="background">
 
-        </div>
-        <div id="radar_body">
+            </div>
+            <div id="radar_body">
 
+            </div>
+        </div>
+        <div id = "detail_box">
+            <table cellpadding="10px">
+                    <tr>
+                        <td>
+                            <img src = "./img/tsuruga.jpeg" style="width:100%"/>
+                        </td>
+                        <td>
+                            鶴ヶ城天守閣（国指定史跡・若松城跡）
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            鶴ヶ城は今から約630年ほど前に、その前身ともいえる東黒川館を葦名直盛が築いたのがはじまりと言われ、戊辰戦争では約１ヶ月に及ぶ激しい攻防戦に耐えた名城として、その名を天下に知らしめました。
+明治７年に取り壊されましたが、昭和40年に再建、平成13年には天守閣に続く建物｢干飯櫓・南走長屋｣が江戸時代の工法・技術を用いて復元されました。天守閣の内部は郷土博物館となっており会津の歴史に触れることができます。
+ 平成23年には赤瓦へのふき替えが完了し幕末当時の姿を再現し、現存する天守閣では国内唯一の赤瓦の天守閣となっています
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type = "button" value = "写真を投稿" style="background:#057afd;border-radius:5px;color:#FFFFFF;border:0px;padding:10px 20px;outline: none;"/>
+                        </td>
+                    </tr>
+            </table>
+        </div>
+        <div id = "find_box">
+            <table cellpadding="10px">
+                    <tr>
+                        <td align="center">
+                            新しいスポットを見つけました！        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src = "./img/tsuruga.jpeg" style="width:100%"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type = "button" value = "詳細を見る" style="background:#057afd;border-radius:5px;color:#FFFFFF;border:0px;padding:10px 20px;outline: none;"
+                            onclick="showDetail()"/>
+                        </td>
+                    </tr>
+            </table>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
 
