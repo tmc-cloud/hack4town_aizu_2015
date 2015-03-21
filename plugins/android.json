@@ -44,6 +44,16 @@
                             "xml": "<service android:enabled=\"true\" android:name=\"org.altbeacon.beacon.BeaconIntentProcessor\"><meta-data android:name=\"background\" android:value=\"true\" /><intent-filter android:priority=\"1\"><action android:name=\"com.unarin.cordova.beacon.IBeaconPlugin.DID_RANGING\" /><action android:name=\"com.unarin.cordova.beacon.IBeaconPlugin.DID_MONITORING\" /></intent-filter></service>",
                             "count": 1
                         }
+                    ],
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 1
+                        }
                     ]
                 }
             }
@@ -54,6 +64,9 @@
             "PACKAGE_NAME": "jp.co.tmc.cloud.Radar"
         },
         "org.apache.cordova.console": {
+            "PACKAGE_NAME": "jp.co.tmc.cloud.Radar"
+        },
+        "org.apache.cordova.geolocation": {
             "PACKAGE_NAME": "jp.co.tmc.cloud.Radar"
         }
     },
