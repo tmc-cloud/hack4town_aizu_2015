@@ -52,6 +52,9 @@
     "installed_plugins": {
         "com.unarin.cordova.beacon": {
             "PACKAGE_NAME": "jp.co.tmc.cloud.Radar"
+        },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "jp.co.tmc.cloud.Radar"
         }
     },
     "dependent_plugins": {}
