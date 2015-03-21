@@ -82,7 +82,7 @@ function plotSpotPoint(spot_pos) {
   $(spot_marker).css("top", parseInt($(spot_marker).css("top"), 10) - CENTER_POINT_HEIGHT / 2 + (parseFloat(spot_pos["lat"], 10) - parseFloat(cur_pos["lat"], 10)) * 200);
   $(spot_marker).css("left", parseInt($(spot_marker).css("left"), 10) - CENTER_POINT_WIDTH / 2 + (parseFloat(spot_pos["lng"], 10) - parseFloat(cur_pos["lng"], 10)) * 200);
 
-  alert($(spot_marker).css("left"));
+//  alert($(spot_marker).css("left"));
 }
 
 /** 現在位置を取得する関数 */
