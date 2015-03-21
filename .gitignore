@@ -1,0 +1,12 @@
+# Mac
+.DS_Store
+
+# iOS
+platforms/ios
+
+# android
+platforms/android
+
+# wp8
+platforms/wp8
+
