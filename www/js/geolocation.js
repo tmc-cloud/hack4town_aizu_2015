@@ -1,21 +1,37 @@
-var jsonTemp = {
+var jsonTemp = [{
   "lat": "38.1234",
   "lng": "140.4321"
-};
+},{
+  "lat": "37.5678",
+  "lng": "140.5678"
+},{
+  "lat": "38.3456",
+  "lng": "139.6543"
+}];
 
 var CENTER_POINT_WIDTH = 32;
 var CENTER_POINT_HEIGHT = 32;
 
 var CENTER_IMG_PATH = "img/center.png";
-var MARK_IMG_PATH = "img/mark.png"
+var MARK_IMG_PATH = "img/mark.png";
 
 var temp_current_position = {
   "lat": "38",
   "lng": "140"
 };
 
-plotCenterPoint();
-plotSpotPoint();
+init();
+
+/** 初期処理関数 */
+function init() {
+
+  // 中心点を表示する関数
+  plotCenterPoint();
+
+  for (var i = 0; i < jsonTemp.length; i++) {
+    plotSpotPoint(jsonTemp[i]);
+  }
+}
 
 /** 中心点をプロットする関数 */
 function plotCenterPoint() {
@@ -41,18 +57,11 @@ function plotCenterPoint() {
 }
 
 /** 周辺のスポットをプロットする関数 */
-function plotSpotPoint() {
+function plotSpotPoint(spot_pos) {
+
   var cur_pos = getCurrentPosition();
 
-//  alert(cur_pos["lat"]);
-
-  var spot_pos = getSpotPosition();
-
-//  alert(spot_pos["lat"]);
-
   var res = geoDistance(parseFloat(cur_pos["lat"], 10), parseFloat(cur_pos["lng"], 10), parseFloat(spot_pos["lat"], 10), parseFloat(spot_pos["lng"], 10), 5);
-
-  // TODO: 距離を算出して後の処理を行うか分岐させる
 
   // 中心点の要素作成
   var spot_marker = $.parseHTML("<img />");
@@ -68,10 +77,12 @@ function plotSpotPoint() {
   // レーダーマップに追加
   $("#radar_body").append($(spot_marker));
 
-  // 画像のサイズに合わせて位置を調整
-  $(spot_marker).css("top", parseInt($(spot_marker).css("top"), 10) - 80 - CENTER_POINT_HEIGHT / 2);
-  $(spot_marker).css("left", parseInt($(spot_marker).css("left"), 10) - CENTER_POINT_WIDTH / 2);
+  // 画像のサイズと座標位置の相対位置に合わせて位置を調整
+  // TODO: 緯度経度の差をpxでどれくらいの距離にするか決める
+  $(spot_marker).css("top", parseInt($(spot_marker).css("top"), 10) - CENTER_POINT_HEIGHT / 2 + (parseFloat(spot_pos["lat"], 10) - parseFloat(cur_pos["lat"], 10)) * 200);
+  $(spot_marker).css("left", parseInt($(spot_marker).css("left"), 10) - CENTER_POINT_WIDTH / 2 + (parseFloat(spot_pos["lng"], 10) - parseFloat(cur_pos["lng"], 10)) * 200);
 
+  alert($(spot_marker).css("left"));
 }
 
 /** 現在位置を取得する関数 */
