@@ -5,13 +5,21 @@ html, body{
     margin: 0px;
 }
 
+#label{
+    position:absolute;
+    top:10%;
+    width:100%;
+    text-align: center;
+    color: #FFFFFF;
+    z-index: 999;
+}
+
 #background{
     width: 100%;
     position: absolute;
-   /* background: url("../img/back.jpg");
-    background-size:cover;
-    -webkit-filter: blur(20px);
-    height:100%;*/
+    background: url("../img/back2.png");
+    height:100%;
+    background-color: #2b2b2b;
 }
 
 #radar_body{
