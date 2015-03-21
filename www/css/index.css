@@ -15,8 +15,8 @@ html, body{
 }
 
 #radar_body{
-    width: 100%;
+    width: 90%;
     position: absolute;
     background: url("../img/radar.png");
-    background-size:cover;
+    background-size:100% 100%;
 }
