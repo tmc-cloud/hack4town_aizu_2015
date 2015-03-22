@@ -29,7 +29,7 @@ function startBLEScan(uuid, callback){
 			var iProximity = proximityToInt(beacon.proximity);
 
 			// 1つでも近くにBeaconがあったらそれをcallbackして終了
-			if(iProximity >= PROXIMITY_NEAR) {
+			if(iProximity >= PROXIMITY_IMMEDIATE) {
 				console.log('Find Beacon ' + beacon.uuid, beacon.major, beacon.minor, beacon.proximty);
 				stopBLEScan();
 				callback(beacon.uuid, beacon.major, beacon.minor, beacon.proximity);
