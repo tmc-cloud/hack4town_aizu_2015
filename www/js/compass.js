@@ -1,4 +1,4 @@
-var COMPASS_INTERVAL = 100;
+var COMPASS_INTERVAL = 330;
 // 方角情報を格納する関数
 var current_compass = -1;
 
