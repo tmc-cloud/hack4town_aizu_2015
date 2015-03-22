@@ -20,6 +20,8 @@ var temp_current_position = {
   "lng": "140"
 };
 
+var timer_plotAllSoptPoint;
+
 init();
 
 /** 初期処理関数 */
@@ -29,8 +31,7 @@ function init() {
   plotCenterPoint();
 
   // 周辺のスポットを全てプロットする関数
-  setInterval(plotAllSpotPoint, 500);
-  //plotAllSpotPoint();
+  timer_plotAllSoptPoint = setInterval(plotAllSpotPoint, 1000);
 }
 
 /** 中心点をプロットする関数 */
@@ -105,6 +106,11 @@ function plotSpotPoint(spot_pos) {
 /** 現在位置を取得する関数 */
 function getCurrentPosition() {
   return temp_current_position;
+}
+
+/** 現在位置をセットする関数 */
+function setCurrentPosition(currentPosition) {
+  temp_current_position = currentPosition;
 }
 
 /** スポットの位置を取得する関数 */
