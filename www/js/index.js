@@ -7,7 +7,13 @@ $(document).ready(function(){
 
 });
 
-setTimeout(findBeacon, 1500);
+
+document.addEventListener("deviceready", function(){
+    startBLEScan("00000000-0AC6-1001-B000-001C4D7F9BAD", findBeacon);
+});
+
+
+//setTimeout(findBeacon, 1500);
 
 function findBeacon(uuid, major, minor, proximity){
     $("#search").css({"-webkit-filter":"blur(10px)"});
