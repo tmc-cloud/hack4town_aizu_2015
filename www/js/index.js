@@ -8,9 +8,13 @@ $(document).ready(function(){
 });
 
 
-document.addEventListener("deviceready", function(){
-    startBLEScan("00000000-0AC6-1001-B000-001C4D7F9BAD", findBeacon);
-});
+document.addEventListener('deviceready',
+    function(){
+        console.log("!!!!!!!!!!!");
+        startBLEScan("00000000-0AC6-1001-B000-001C4D7F9BAD", findBeacon);
+    },
+    false
+);
 
 
 //setTimeout(findBeacon, 1500);
