@@ -40,7 +40,8 @@
                     </tr>
                     <tr>
                         <td colspan="2" align="center">
-                            <input type = "button" value = "写真を投稿" style="background:#057afd;border-radius:5px;color:#FFFFFF;border:0px;padding:10px 20px;outline: none;"/>
+                            <input type = "button" value = "写真を投稿" style="background:#057afd;border-radius:5px;color:#FFFFFF;border:0px;padding:10px 20px;outline: none;"
+                            onclick="takephoto()"/>
                         </td>
                     </tr>
             </table>
@@ -61,6 +62,26 @@
                         <td colspan="2" align="center">
                             <input type = "button" value = "詳細を見る" style="background:#057afd;border-radius:5px;color:#FFFFFF;border:0px;padding:10px 20px;outline: none;"
                             onclick="showDetail()"/>
+                        </td>
+                    </tr>
+            </table>
+        </div>
+        <div id = "photo_box">
+            <table cellpadding="10px" style="width:100%">
+                    <tr>
+                        <td align="center">
+                            写真を投稿します
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src = "" style="width:100%" id = "photo"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center" style="width:100%">
+                            <input type = "button" value = "投稿" style="background:#057afd;border-radius:5px;color:#FFFFFF;border:0px;padding:10px 20px;outline: none;"
+                            onclick="alert('写真を投稿しました');hideDialog();"/>
                         </td>
                     </tr>
             </table>
