@@ -15,7 +15,7 @@ function changeCurrentPosition() {
   var diffLngCurrent = 0;
 
   // 角度に合わせて歩く距離を調整する
-  var rad = degree * Math.PI / 180;
+  var rad = -degree * Math.PI / 180;
   var diffLat = diffLatCurrent * Math.cos(rad) - diffLngCurrent * Math.sin(rad);
   var diffLng = diffLatCurrent * Math.sin(rad) + diffLngCurrent * Math.cos(rad);
 
