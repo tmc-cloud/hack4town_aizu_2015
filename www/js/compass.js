@@ -1,12 +1,14 @@
-var COMPASS_INTERVAL = 500;
+var COMPASS_INTERVAL = 100;
 
 function compassSuccess(heading) {
+  //  alert(heading.magneticHeading);
+
   // 回転させるためのパラメータをCSSに反映させる
-  alert(heading.magneticHeading);
+  rotate(-1 * heading.magneticHeading);
 }
 
 function compassError(compassError) {
-  alert("失敗！！");
+  console.log("取得失敗！！");
 }
 
 var options = {
