@@ -7,7 +7,6 @@ $(document).ready(function(){
 
 });
 
-
 document.addEventListener('deviceready',
     function(){
         console.log("!!!!!!!!!!!");
@@ -15,9 +14,6 @@ document.addEventListener('deviceready',
     },
     false
 );
-
-
-//setTimeout(findBeacon, 1500);
 
 function findBeacon(uuid, major, minor, proximity){
     $("#search").css({"-webkit-filter":"blur(10px)"});
@@ -33,4 +29,8 @@ function hideDialog(){
     $("#find_box").css({"display":"none"});
     $("#detail_box").css({"display":"none"});
     $("#search").css({"-webkit-filter":""});
+}
+
+function rotate(deg){
+    $("#radar_body").css({"transform":"rotate("+ deg +"deg)"})
 }

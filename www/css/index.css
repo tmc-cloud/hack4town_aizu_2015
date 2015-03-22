@@ -32,6 +32,7 @@ html, body{
     position: absolute;
     background: url("../img/radar.png");
     background-size:100% 100%;
+    transition-duration:0.1s;
 }
 
 #find_box{
