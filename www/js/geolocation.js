@@ -20,8 +20,6 @@ var temp_current_position = {
   "lng": "140"
 };
 
-var timer_plotAllSoptPoint;
-
 init();
 
 /** 初期処理関数 */
@@ -30,8 +28,8 @@ function init() {
   // 中心点を表示する関数
   plotCenterPoint();
 
-  // 周辺のスポットを全てプロットする関数
-  timer_plotAllSoptPoint = setInterval(plotAllSpotPoint, 1000);
+  // 周辺のスポットを全てプロットする関数を1秒間隔で呼び出し
+  setInterval(plotAllSpotPoint, 1000);
 }
 
 /** 中心点をプロットする関数 */
