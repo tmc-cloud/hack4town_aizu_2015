@@ -28,9 +28,9 @@ function init() {
   // 中心点を表示する関数
   plotCenterPoint();
 
-  for (var i = 0; i < jsonTemp.length; i++) {
-    plotSpotPoint(jsonTemp[i]);
-  }
+  // 周辺のスポットを全てプロットする関数
+  setInterval(plotAllSpotPoint, 500);
+  //plotAllSpotPoint();
 }
 
 /** 中心点をプロットする関数 */
@@ -54,6 +54,15 @@ function plotCenterPoint() {
   // 画像のサイズに合わせて位置を調整
   $(cp).css("top", parseInt($(cp).css("top"), 10) - CENTER_POINT_HEIGHT / 2);
   $(cp).css("left", parseInt($(cp).css("left"), 10) - CENTER_POINT_WIDTH / 2);
+}
+
+/** 周辺のスポットを全てプロットする関数 */
+function plotAllSpotPoint() {
+  console.log('plotAllSpotPoint!!!!!!!!!!!!!!');
+
+  for (var i = 0; i < jsonTemp.length; i++) {
+    plotSpotPoint(jsonTemp[i]);
+  }
 }
 
 /** 周辺のスポットをプロットする関数 */
