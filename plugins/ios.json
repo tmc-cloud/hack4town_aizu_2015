@@ -16,6 +16,30 @@
                     "CoreLocation.framework": [
                         {
                             "xml": false,
+                            "count": 4
+                        }
+                    ],
+                    "ImageIO.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "CoreGraphics.framework": [
+                        {
+                            "xml": false,
+                            "count": 2
+                        }
+                    ],
+                    "AssetsLibrary.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "MobileCoreServices.framework": [
+                        {
+                            "xml": false,
                             "count": 1
                         }
                     ]
@@ -29,7 +53,23 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"Camera\"><param name=\"ios-package\" value=\"CDVCamera\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"CameraUsesGeolocation\" value=\"false\" />",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Compass\"><param name=\"ios-package\" value=\"CDVCompass\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -47,6 +87,10 @@
                         {
                             "xml": "<string>This app would like to scan for iBeacons while it is in use.</string>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<string />",
+                            "count": 2
                         }
                     ]
                 }
@@ -57,7 +101,16 @@
         "com.unarin.cordova.beacon": {
             "PACKAGE_NAME": "jp.co.tmc.cloud.Radar"
         },
+        "org.apache.cordova.camera": {
+            "PACKAGE_NAME": "jp.co.tmc.cloud.Radar"
+        },
         "org.apache.cordova.console": {
+            "PACKAGE_NAME": "jp.co.tmc.cloud.Radar"
+        },
+        "org.apache.cordova.device-orientation": {
+            "PACKAGE_NAME": "jp.co.tmc.cloud.Radar"
+        },
+        "org.apache.cordova.geolocation": {
             "PACKAGE_NAME": "jp.co.tmc.cloud.Radar"
         }
     },
