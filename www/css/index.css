@@ -13,5 +13,7 @@ html, body{
 }
 
 a {
-  background-color: #30d142
+  background-color: #7beb82;
+  font-size: 32px;
+  padding: 10px;
 }

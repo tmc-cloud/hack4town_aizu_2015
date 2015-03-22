@@ -15,6 +15,8 @@ var CENTER_POINT_HEIGHT = 32;
 var CENTER_IMG_PATH = "img/center.png";
 var MARK_IMG_PATH = "img/mark.png";
 
+var PIC_PATH = ["img/tsuruga.jpeg", "img/inawashiro.jpeg", "img/hakusan.jpeg"];
+
 var temp_current_position = {
   "lat": "38",
   "lng": "140"
@@ -82,7 +84,8 @@ function plotSpotPoint(spot_pos) {
   var spot_marker = $.parseHTML("<img />");
   spot_marker = spot_marker[0];
 
-  $(spot_marker).prop("src", MARK_IMG_PATH);
+//  $(spot_marker).prop("src", MARK_IMG_PATH);
+  $(spot_marker).prop("src", PIC_PATH[$(".spot_marker").size()]);
   $(spot_marker).prop("class", "spot_marker");
   $(spot_marker).css("position", "absolute");
   $(spot_marker).css("top", parseInt($("#center_point").css("top"), 10));
