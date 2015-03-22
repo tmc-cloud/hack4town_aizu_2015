@@ -28,9 +28,8 @@ function init() {
   // 中心点を表示する関数
   plotCenterPoint();
 
-  for (var i = 0; i < jsonTemp.length; i++) {
-    plotSpotPoint(jsonTemp[i]);
-  }
+  // 周辺のスポットを全てプロットする関数を1秒間隔で呼び出し
+  setInterval(plotAllSpotPoint, 1000);
 }
 
 /** 中心点をプロットする関数 */
@@ -56,6 +55,22 @@ function plotCenterPoint() {
   $(cp).css("left", parseInt($(cp).css("left"), 10) - CENTER_POINT_WIDTH / 2);
 }
 
+/** 周辺のスポットを全てプロットする関数 */
+function plotAllSpotPoint() {
+  console.log('plotAllSpotPoint!!!!!!!!!!!!!!');
+
+  removeAllSpotPoint();
+
+  for (var i = 0; i < jsonTemp.length; i++) {
+    plotSpotPoint(jsonTemp[i]);
+  }
+}
+
+/** 周辺のスポットのプロットを全て削除する関数 */
+function removeAllSpotPoint() {
+  $(".spot_marker").remove();
+}
+
 /** 周辺のスポットをプロットする関数 */
 function plotSpotPoint(spot_pos) {
 
@@ -68,6 +83,7 @@ function plotSpotPoint(spot_pos) {
   spot_marker = spot_marker[0];
 
   $(spot_marker).prop("src", MARK_IMG_PATH);
+  $(spot_marker).prop("class", "spot_marker");
   $(spot_marker).css("position", "absolute");
   $(spot_marker).css("top", parseInt($("#center_point").css("top"), 10));
   $(spot_marker).css("left", parseInt($("#center_point").css("left"), 10));
@@ -88,6 +104,11 @@ function plotSpotPoint(spot_pos) {
 /** 現在位置を取得する関数 */
 function getCurrentPosition() {
   return temp_current_position;
+}
+
+/** 現在位置をセットする関数 */
+function setCurrentPosition(currentPosition) {
+  temp_current_position = currentPosition;
 }
 
 /** スポットの位置を取得する関数 */
