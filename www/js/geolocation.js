@@ -60,9 +60,16 @@ function plotCenterPoint() {
 function plotAllSpotPoint() {
   console.log('plotAllSpotPoint!!!!!!!!!!!!!!');
 
+  removeAllSpotPoint();
+
   for (var i = 0; i < jsonTemp.length; i++) {
     plotSpotPoint(jsonTemp[i]);
   }
+}
+
+/** 周辺のスポットのプロットを全て削除する関数 */
+function removeAllSpotPoint() {
+  $(".spot_marker").remove();
 }
 
 /** 周辺のスポットをプロットする関数 */
@@ -77,6 +84,7 @@ function plotSpotPoint(spot_pos) {
   spot_marker = spot_marker[0];
 
   $(spot_marker).prop("src", MARK_IMG_PATH);
+  $(spot_marker).prop("class", "spot_marker");
   $(spot_marker).css("position", "absolute");
   $(spot_marker).css("top", parseInt($("#center_point").css("top"), 10));
   $(spot_marker).css("left", parseInt($("#center_point").css("left"), 10));
