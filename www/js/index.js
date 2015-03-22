@@ -29,6 +29,7 @@ function hideDialog(){
     $("#find_box").css({"display":"none"});
     $("#detail_box").css({"display":"none"});
     $("#search").css({"-webkit-filter":""});
+    startBLEScan("00000000-0AC6-1001-B000-001C4D7F9BAD", findBeacon);
 }
 
 function rotate(deg){
