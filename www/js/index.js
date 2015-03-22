@@ -15,6 +15,20 @@ document.addEventListener('deviceready',
     false
 );
 
+
+function takephoto(){
+    $("#detail_box").css({"display":"none"});
+    $("#photo_box").css({"display":"block"});
+    navigator.camera.getPicture(onPhotoDataSuccess, function(){}, { quality: 50,
+        destinationType: navigator.camera.DestinationType.DATA_URL });
+}
+
+function onPhotoDataSuccess(imageData) { 
+    setTimeout(function(){
+        $("#photo").attr({"src": "data:image/jpeg;base64," + imageData});
+    },1000);   
+}
+
 function findBeacon(uuid, major, minor, proximity){
     $("#search").css({"-webkit-filter":"blur(10px)"});
     $("#find_box").css({"display":"block"});
@@ -29,6 +43,7 @@ function hideDialog(){
     $("#find_box").css({"display":"none"});
     $("#detail_box").css({"display":"none"});
     $("#search").css({"-webkit-filter":""});
+    $("#photo_box").css({"display":"none"});
     startBLEScan("00000000-0AC6-1001-B000-001C4D7F9BAD", findBeacon);
 }
 
