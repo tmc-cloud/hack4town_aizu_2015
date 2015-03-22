@@ -17,5 +17,11 @@
             "type": "registry",
             "id": "org.apache.cordova.console"
         }
+    },
+    "org.apache.cordova.device-orientation": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.device-orientation"
+        }
     }
 }
