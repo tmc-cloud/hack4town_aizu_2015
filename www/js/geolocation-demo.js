@@ -1,10 +1,6 @@
 
 setInterval(changeCurrentPosition, 1000);
 
-function getCompassData() {
-  return 90;
-}
-
 /** 自分がいる位置少しだけ前ににする関数 */
 function changeCurrentPosition() {
   console.log('changeCurrentPosition!!!!!!!!!!!!!!!');
